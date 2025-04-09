@@ -1,9 +1,18 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
 
 const StoreItem = ({ store }) => {
+
+    const navigate = useNavigate();
+
+    const handleStoreClick = (store) => {
+        const urlSlug = store.toLowerCase().replace(/\s+/g, '-');
+        navigate(`/${urlSlug}`);
+      };
+
     return (
-        <a
-            href={store.redirectUrl}
+        <div
+        onClick={() => handleStoreClick(store.name)}
             target="_blank"
             rel="noopener noreferrer"
             className="block bg-white text-black border p-4 rounded-lg text-center hover:shadow-lg transition-shadow"
@@ -19,7 +28,7 @@ const StoreItem = ({ store }) => {
         >
             Get the Deal
         </button>
-        </a>
+        </div>
     );
 };
 

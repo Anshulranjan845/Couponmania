@@ -1,0 +1,1 @@
+export const COUPON_LOGO_URL= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGxdiihvN1OXCAETt_maRdcUxdtrieieoj8g&s";

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from "react-router";
+import { COUPON_LOGO_URL } from '../utils/constants';
 
 
 const Header = () => {
@@ -8,7 +9,7 @@ const Header = () => {
       <div className="container mx-auto px-6 py-2 flex justify-between items-center">
         {/* Website Name */}
         <div className="text-2xl font-bold text-rose-600 ">
-          <img style={{ height: '70px'}} src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGxdiihvN1OXCAETt_maRdcUxdtrieieoj8g&s"} />
+          <img style={{ height: '70px'}} src={COUPON_LOGO_URL} />
         </div>
 
         {/* Navigation Section */}
