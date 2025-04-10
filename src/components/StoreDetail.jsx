@@ -1,16 +1,21 @@
 import React from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import {StoreDescription} from "../data/storeDescription";
+import BrandCard from './BrandCard';
 
 const StoreDetail = ({stores}) => {
     const { storeName } = useParams();
     const navigate = useNavigate();
-    console.log(storeName)
+    //console.log(storeName)
 
     const decodedName = storeName.replace(/-/g, ' ');
   const store = stores.find(s => 
     s.name.toLowerCase() === decodedName.toLowerCase()
   );
    
+  const brand = StoreDescription.find(s => 
+    s.name.toLowerCase() === decodedName.toLowerCase()
+  );
   
   if (!store) {
     return (
@@ -27,12 +32,12 @@ const StoreDetail = ({stores}) => {
   }
   
     return (
-      <div className="max-w-4xl mx-auto p-6 mt-18">
+      <div className="max-w-4xl h-full mx-auto p-6 mt-18">
         <button 
           onClick={() => navigate('/')}
-          className="flex items-center p-4 mx-6 text-rose-600 cursor-pointer hover:text-rose-800 transition-colors"
+          className="flex items-start p-4 mx-6 text-xl text-rose-600 cursor-pointer hover:text-rose-800 transition-colors"
         >
-          <span className="mr-1 cursor-pointer">←</span> Back to stores
+          <span className="mr-1 text-2xl cursor-pointer">←</span> Back to stores
         </button>
         
         <div className="bg-white rounded-xl shadow-md overflow-hidden">
@@ -59,6 +64,7 @@ const StoreDetail = ({stores}) => {
             </div>
           </div>
         </div>
+        <BrandCard brand={brand} store={store} />
       </div>
     );
   };
