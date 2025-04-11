@@ -1,14 +1,30 @@
 import React from "react";
 
 const BrandCard = ({ brand , store }) => {
-  return (
+
+      
+  if (!brand) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 p-6 mt-6">
+        <h2 className="text-2xl font-bold text-gray-800 mb-4">Brand not found</h2>
+        <button 
+          onClick={() => navigate('/')}
+          className="px-4 py-2 bg-rose-600 text-white rounded-lg hover:bg-rose-700 transition-colors"
+        >
+          Back to Home
+        </button>
+      </div>
+    );
+  }
+
+  if(store) return (
     <div className="p-4 border rounded-xl shadow-md bg-white mt-6">
       <img
         src={store.logo}
         alt={`${brand.name} logo`}
         className="h-16 mb-4 object-contain"
       />
-      <h2 className="text-xl font-bold mb-2">{brand.name}</h2>
+      {brand.name && <h2 className="text-xl font-bold mb-2">{brand.name}</h2>}
       <p className="mb-2 text-sm text-gray-600">{brand.description}</p>
       <a
         href={brand.link}

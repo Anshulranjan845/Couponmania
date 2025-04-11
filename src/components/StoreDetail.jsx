@@ -12,11 +12,11 @@ const StoreDetail = ({stores}) => {
 
     const decodedName = normalize(storeName);
 
-    console.log(decodedName);
+    //console.log(decodedName);
   const store = stores.find(s => 
     normalize(s.name.toLowerCase()) === decodedName.toLowerCase()
   );
-   
+  console.log(store);
   const brand = StoreDescription.find(s => 
     normalize(s.name.toLowerCase()) === decodedName.toLowerCase()
   );
@@ -35,7 +35,7 @@ const StoreDetail = ({stores}) => {
     );
   }
   
-    return (
+  return (
       <div className="max-w-4xl h-full mx-auto p-6 mt-18">
         <button 
           onClick={() => navigate('/')}
