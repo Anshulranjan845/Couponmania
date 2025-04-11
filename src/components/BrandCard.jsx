@@ -5,7 +5,7 @@ const BrandCard = ({ brand , store }) => {
       
   if (!brand) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 p-6 mt-6">
+      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 p-6 mt-6 rounded-xl">
         <h2 className="text-2xl font-bold text-gray-800 mb-4">Brand not found</h2>
         <button 
           onClick={() => navigate('/')}
