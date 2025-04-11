@@ -63,7 +63,7 @@ export const StoreDescription = [
           logo: "https://upload.wikimedia.org/wikipedia/commons/3/3c/6thstreet_logo.png"
         },
         {
-          name: "Bloomingdale’s UAE",
+          name: "Bloomingdale’s",
           link: "https://bloomingdales.ae/",
           description: "Luxury fashion, beauty, and home essentials from world-class designers and premium labels.",
           categories: ["Fashion", "Shoes & Bags", "Beauty", "Home"],

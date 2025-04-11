@@ -4,17 +4,21 @@ import {StoreDescription} from "../data/storeDescription";
 import BrandCard from './BrandCard';
 
 const StoreDetail = ({stores}) => {
+    const normalize = str =>
+        str.toLowerCase().replace(/-/g, ' ').replace(/[^a-z0-9 ]/gi, '').trim();
     const { storeName } = useParams();
     const navigate = useNavigate();
     //console.log(storeName)
 
-    const decodedName = storeName.replace(/-/g, ' ');
+    const decodedName = normalize(storeName);
+
+    console.log(decodedName);
   const store = stores.find(s => 
-    s.name.toLowerCase() === decodedName.toLowerCase()
+    normalize(s.name.toLowerCase()) === decodedName.toLowerCase()
   );
    
   const brand = StoreDescription.find(s => 
-    s.name.toLowerCase() === decodedName.toLowerCase()
+    normalize(s.name.toLowerCase()) === decodedName.toLowerCase()
   );
   
   if (!store) {
